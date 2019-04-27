@@ -2,7 +2,7 @@
   <?php include('template/admin_header.php');?>
           <?php
                 $id = $_GET['id'];
-                $sql_category = "SELECT * FROM course INNER JOIN category ON course.course_category = category.c_id WHERE course.course_id = '".$id."'";
+                $sql_category = "SELECT * FROM products INNER JOIN category ON products.products_category = category.category_id WHERE products.products_id = '".$id."'";
                 $result = $conn->query($sql_category); 
                 $row = mysqli_fetch_assoc($result);
 
