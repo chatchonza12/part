@@ -47,7 +47,7 @@
         
 		<div class="container">
         	<div class="justify-content-md-center ">
-            <form name="edit_course" method="post">
+            <form name="edit_course" method="post" enctype="multipart/form-data">
             <div class="form-group">
                     <label for="">ลำดับ</label>
                     <input type="text" class="form-control" id="" placeholder="" disabled value="<?php echo $row["products_id"]; ?>">
