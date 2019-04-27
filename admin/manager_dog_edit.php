@@ -14,13 +14,13 @@
                       $products_price = $_POST['products_price'];
 
                       if(trim($_FILES["fileUpload"]["tmp_name"]) != ""){
-                        
+
                       $fileinfo=PATHINFO($_FILES["filUpload"]["name"]);
                       $newFilename=$fileinfo['filename'] ."_". time() . "." . $fileinfo['extension'];
                       move_uploaded_file($_FILES["filUpload"]["tmp_name"],"images/" . $newFilename);
                       $location="images/" . $newFilename;
                       }else{
-                        echo $location = "d";
+                        echo $location = $row["products_img"];
                       }
 
                       $sql2 = "UPDATE products SET products_name = '".$products_name."' , products_category = '".$products_category."',products_detail = '".$products_detail."' ,  products_price = '".$products_price."' ,  products_price = '".$products_price."' , products_img = '".$location."'  WHERE products_id = '".$id."' ";
