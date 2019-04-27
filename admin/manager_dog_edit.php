@@ -15,7 +15,7 @@
 
                       if($_FILES["filUpload"]["name"] != ""){
                         if(move_uploaded_file($_FILES["filUpload"]["tmp_name"],"images/".$_FILES["filUpload"]["name"])){
-                          @unlink("myfile/".$_POST["hdnOldFile"]);
+                          @unlink("images/".$_POST["hdnOldFile"]);
                           $sql_img = "UPDATE products SET products_img = '".$_FILES["filUpload"]["name"]."' WHERE products_id = '".$id."'";
                           $query = mysqli_query($conn,$sql_img);
                       }
