@@ -1,6 +1,7 @@
-<?php 
-    session_start();
-    include("includes/connect.php");
+<?php
+session_start();
+include("includes/connect.php");
+require_once __DIR__ . '/vendor/autoload.php';
     $id = $_SESSION["member_id"];
     $sql = "SELECT * FROM orders
             INNER JOIN order_detail ON orders.order_id = order_detail.detail_order
@@ -10,34 +11,18 @@
     $result = $conn->query($sql);
     $results = $conn->query($sql);
     $rows = $results->fetch_assoc();
-    $row_cnt = $result->num_rows;
-    while($row = $result->fetch_assoc()){
-        $name = $row["products_name"];
-        $qty = $row["detail_qty"];
-        $price = $row["products_price"];
-    }
-    $sum = 0;
-    for ($i=1; $i < $row_cnt; $i++) { 
-        $sum = $sum + $i;
-    }
 
-    ?>
+ob_start();
+?>
 
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php include("includes/common.php");?>
+</head>
+<body>
 
-require_once __DIR__ . '/vendor/autoload.php';
-
-$mpdf = new \Mpdf\Mpdf();
-
-$html = '
-    <style>
-        body {
-            font-family: "Garuda";
-            font-size: 12pt;
-        }
-    </style>
-<div class="container">
-<table class="table table-bordered" border="1" style="width:100%">
+<table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
       <th scope="col">ลำดับ</th>
@@ -47,16 +32,26 @@ $html = '
     </tr>
   </thead>
   <tbody>
+    <?php while($row = $result->fetch_assoc()){ ?>
     <tr>
-    while($row = $result->fetch_assoc()){
-      <th scope="row">'.$row["products_name"].'</th>
-      <td>'.$name.'</td>
-      <td>'.$qty.'</td>
-      <td>'.$price.'</td>
+      <th scope="row"><?php @$i = $i + 1; echo $i;?></th>
+      <td><?php echo $row["products_name"]; ?></td>
+      <td><?php echo $row["detail_qty"]; ?></td>
+      <td><?php echo $row["products_price"]; ?></td>
     </tr>
+    <?php } ?>
   </tbody>
 </table>
-</div>
-';
-$mpdf->WriteHTML($html);
+
+</body>
+</html>
+
+<?Php
+$html = ob_get_contents();
+ob_end_clean();
+$mpdf = new mPDF('th', 'A4-L', '0', 'garuda');
+$mpdf->SetAutoFont();
+$mpdf->SetDisplayMode('fullpage');
+$mpdf->WriteHTML($html, 2);
 $mpdf->Output();
+?>     
