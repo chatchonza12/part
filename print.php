@@ -21,7 +21,7 @@ ob_start();
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 </head>
 <body>
-<style>
+<style type="text/css">
         body {
             font-family: "Garuda";
             font-size: 12pt;
