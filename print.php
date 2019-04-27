@@ -11,12 +11,10 @@
     $results = $conn->query($sql);
     $rows = $results->fetch_assoc();
     while($row = $result->fetch_assoc()){
+        $i = $i++;
         $name = $row["products_name"];
         $qty = $row["detail_qty"];
         $price = $row["products_price"];
-    }
-    for ($i=1; $i < count($row); $i++) { 
-        $count = $i;
     }
 
     ?>
@@ -46,7 +44,7 @@ $html = '
   </thead>
   <tbody>
     <tr>
-      <th scope="row">'.$count.'</th>
+      <th scope="row">'.$i.'</th>
       <td>'.$name.'</td>
       <td>'.$qty.'</td>
       <td>'.$price.'</td>
