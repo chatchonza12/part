@@ -64,11 +64,11 @@
               </div>
               <div class="form-group">
               <label>รายละเอียด</label>
-                  <textarea class="form-control" name="products_detail" rows="3"></textarea>
+                  <textarea class="form-control" name="products_detail" rows="3"><?php echo $row["products_detail"]; ?></textarea>
               </div>
               <div class="form-group">
                   <label for="">ราคา</label>
-                  <input type="text" class="form-control" id="" placeholder="" name="products_price">
+                  <input type="text" class="form-control" id="" placeholder="" name="products_price" value="<?php echo $row["products_price"]; ?>">
               </div>
             <div class="custom-file">
                         <input type="file" class="custom-file-input" name="filUpload" id="customFile">
