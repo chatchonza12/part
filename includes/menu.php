@@ -42,11 +42,14 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
         </li>
         <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          ประเภท
+          พันธุ์
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="category.php?id=1">วิทยาศาสตร์</a>
-          <a class="dropdown-item" href="category.php?id=2">คณิตศาสตร์</a>
+          <a class="dropdown-item" href="category.php?id=1">พันธุ์ปอมเมอเรเนียน</a>
+          <a class="dropdown-item" href="category.php?id=2">พันธุ์ชิวาว่า</a>
+          <a class="dropdown-item" href="category.php?id=3">พันธุ์ชิสุ</a>
+          <a class="dropdown-item" href="category.php?id=4">พันธุ์ไซบีเรีย</a>
+          <a class="dropdown-item" href="category.php?id=5">พันธุ์โกลเดินริทรีฟเวอร์</a>
         </div>
       </li>
         <li class="nav-item active">
