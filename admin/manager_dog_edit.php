@@ -13,7 +13,8 @@
                       $products_detail = $_POST['products_detail'];
                       $products_price = $_POST['products_price'];
 
-                      if($_FILES["filUpload"] != "") {
+                      if(trim($_FILES["fileUpload"]["tmp_name"]) != ""){
+                        
                       $fileinfo=PATHINFO($_FILES["filUpload"]["name"]);
                       $newFilename=$fileinfo['filename'] ."_". time() . "." . $fileinfo['extension'];
                       move_uploaded_file($_FILES["filUpload"]["tmp_name"],"images/" . $newFilename);
