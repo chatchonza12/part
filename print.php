@@ -18,7 +18,7 @@
 
     ?>
     <style>
-        table {
+        .container {
             font-family: "Garuda";
             font-size: 12pt;
         }
@@ -31,7 +31,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf();
 
 $html = '
-
+<div class="container">
 <table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
@@ -50,7 +50,7 @@ $html = '
     </tr>
   </tbody>
 </table>
-
+</div>
 ';
 $mpdf->WriteHTML($html);
 $mpdf->Output();
