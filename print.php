@@ -21,6 +21,7 @@ ob_start();
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 </head>
 <body>
+    <center><h3>ใบเสร็จ</h3></center>
 <table class="table table-bordered" border="1" width="100%">
   <thead class="thead-dark">
     <tr>
@@ -49,7 +50,7 @@ ob_start();
 $html = ob_get_contents();
 ob_end_clean();
 $mpdf = new \Mpdf\Mpdf([
-	'default_font_size' => 9,
+	'default_font_size' => 12,
 	'default_font' => 'Garuda'
 ]);   
 $mpdf->SetDisplayMode('fullpage');
