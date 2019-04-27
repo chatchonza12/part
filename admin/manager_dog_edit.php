@@ -18,13 +18,13 @@
                           @unlink("images/".$_POST["hdnOldFile"]);
                           $sql_img = "UPDATE products SET products_img = '".$_FILES["filUpload"]["name"]."' WHERE products_id = '".$id."'";
                           $query = mysqli_query($conn,$sql_img);
-                      }
 
-                      $sql2 = "UPDATE products SET products_name = '".$products_name."' , products_category = '".$products_category."',products_detail = '".$products_detail."' ,  products_price = '".$products_price."' ,  products_price = '".$products_price."' ,  WHERE products_id = '".$id."' ";
-                      if (mysqli_query($conn, $sql2)) {
-                        header('Location: manager_dog.php');
-                        exit;  
-                      } 
+                          $sql2 = "UPDATE products SET products_name = '".$products_name."' , products_category = '".$products_category."',products_detail = '".$products_detail."' ,  products_price = '".$products_price."' ,  products_price = '".$products_price."' ,  WHERE products_id = '".$id."' ";
+                          if (mysqli_query($conn, $sql2)) {
+                            header('Location: manager_dog.php');
+                            exit;  
+                          }
+                      }
                     } 
                   }
               }
