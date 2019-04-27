@@ -22,7 +22,7 @@
                 <a href="products.php?id=<?php echo $row["products_id"];?>" class="col">
                     <div class="row">
                         <div class="col-12 px-0 pb-3 bg-grey">
-                        <img src="./admin/images/<?php echo $row["products_img"];?>" class="w-100">
+                        <img src="./admin/images/<?php echo $row["products_img"];?>" class="w-100" style="height:250px">
                             <div class="row py-3 px-3"> 
                                 <h5 class="col-12 my-0 font-weight-bold line-height-1"><?php echo $row["category_name"];?></h5>
                                 <div class="col-12 font-weight-bold line-height-1"><?php echo $row["products_name"];?></div>
