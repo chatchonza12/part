@@ -21,12 +21,6 @@ ob_start();
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 </head>
 <body>
-<style type="text/css">
-        body {
-            font-family: "Garuda";
-            font-size: 12pt;
-        }
-</style>
 <table class="table table-bordered" border="1" width="100%">
   <thead class="thead-dark">
     <tr>
@@ -54,7 +48,10 @@ ob_start();
 <?Php
 $html = ob_get_contents();
 ob_end_clean();
-$mpdf = new \Mpdf\Mpdf();   
+$mpdf = new \Mpdf\Mpdf([
+	'default_font_size' => 9,
+	'default_font' => 'Garuda'
+]);   
 $mpdf->SetDisplayMode('fullpage');
 $mpdf->WriteHTML($html, 2);
 $mpdf->Output();
