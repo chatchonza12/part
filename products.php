@@ -28,7 +28,7 @@
 
     <div class="row">
         <div class="col-5">
-            <img src="https://shoponline.ondemand.in.th/media/catalog/product/cache/8a167235e7e1a6cb5ddf81fa0dd48b22/A/W/AW-OE-Prathom---BS401-_-50-_-_---01_1.png" alt="..." class="img-thumbnail" style="margin-bottom: 10px;"><br>
+            <img src="./admin/images/<?php echo $row["products_img"];?>" alt="..." class="img-thumbnail" style="margin-bottom: 10px;"><br>
             <a href="products_cart.php?id=<?php echo $row["products_id"]; ?>&action=add" class="btn btn-success btn-block btn-lg"><i class="fas fa-shopping-cart"></i> เพิ่มลงรถเข็น</a>
         </div>
         <div class="col-7">
