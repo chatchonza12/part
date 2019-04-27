@@ -49,8 +49,7 @@ ob_start();
 <?Php
 $html = ob_get_contents();
 ob_end_clean();
-$mpdf = new \Mpdf\Mpdf();
-$mpdf->SetAutoFont();
+$mpdf = new \Mpdf\Mpdf();   
 $mpdf->SetDisplayMode('fullpage');
 $mpdf->WriteHTML($html, 2);
 $mpdf->Output();
