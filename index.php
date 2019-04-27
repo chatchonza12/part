@@ -25,8 +25,7 @@
                         <img src="./admin/<?php echo $row["products_img"];?>" class="w-100">
                             <div class="row py-3 px-3"> 
                                 <h5 class="col-12 my-0 font-weight-bold line-height-1"><?php echo $row["category_name"];?></h5>
-                                <div class="col-12 font-weight-bold line-height-1">ประถมเนื้อหา</div>
-                                <div class="col-12 mt-2"><?php echo $row["products_name"];?></div>
+                                <div class="col-12 font-weight-bold line-height-1"><?php echo $row["products_name"];?></div>
                             </div>
                             <div class="row px-2 mx-0 price">
                                 <div class="col-3 px-0"> <div href="#" target="_self" class="btn-grey"> สั่งชื้อ </div> </div>
