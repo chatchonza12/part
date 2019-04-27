@@ -49,7 +49,7 @@ ob_start();
 <?Php
 $html = ob_get_contents();
 ob_end_clean();
-$mpdf = new \Mpdf\Mpdf('th', 'A4-L', '0', 'garuda');
+$mpdf = new \Mpdf\Mpdf();
 $mpdf->SetAutoFont();
 $mpdf->SetDisplayMode('fullpage');
 $mpdf->WriteHTML($html, 2);
