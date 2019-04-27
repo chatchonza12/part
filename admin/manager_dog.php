@@ -36,14 +36,14 @@ if(isset($_POST['submit_dog'])){
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="admin.php">ระบบขายคอร์สออนไลน์</a>
+            <a href="admin.php">ระบบขายสุนัข</a>
           </li>
           <li class="breadcrumb-item">จัดการสินค้า</li>
-          <li class="breadcrumb-item active"><i class="fas fa-plus-square"></i> จัดการคอสเรียน </li>
+          <li class="breadcrumb-item active"><i class="fas fa-plus-square"></i> จัดการสินค้า </li>
         </ol>
         
 		<div class="">
-        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#addproducts"><i class="fas fa-plus-square"></i> เพิ่มคอร์สเรียน</a>
+        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#addproducts"><i class="fas fa-plus-square"></i> เพิ่มสินค้า</a>
         <table class="table" style="margin-top:15px">
           <thead class="thead-dark">
             <tr>
@@ -101,7 +101,7 @@ if(isset($_POST['submit_dog'])){
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="">เพิ่มคอร์สเรียน</h5>
+        <h5 class="modal-title" id="">เพิ่มสินค้า</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -113,10 +113,13 @@ if(isset($_POST['submit_dog'])){
             <input type="text" class="form-control" id="" placeholder="" name="products_name">
         </div>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">ประเภทคอร์สเรียน</label>
+            <label for="exampleFormControlSelect1">ประเภทสุนัข</label>
             <select class="form-control" id="" name="products_category">
-            <option value="1">วิทยาศาสตร์</option>
-            <option value="2">คณิตศาสตร์</option>
+            <option value="1">พันธุ์ปอมเมอเรเนียน</option>
+            <option value="2">พันธุ์ชิวาว่า</option>
+            <option value="3">พันธุ์ชิสุ</option>
+            <option value="4">พันธุ์ไซบีเรีย</option>
+            <option value="5">พันธุ์โกลเดินริทรีฟเวอร์</option>
             </select>
         </div>
         <div class="form-group">
@@ -135,7 +138,7 @@ if(isset($_POST['submit_dog'])){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-        <button type="submit" class="btn btn-primary" name="submit_dog"><i class="fas fa-plus-square"></i> เพิ่มคอร์สเรียน</button>
+        <button type="submit" class="btn btn-primary" name="submit_dog"><i class="fas fa-plus-square"></i> เพิ่มสินค้า</button>
       </div>
       </form>
 
