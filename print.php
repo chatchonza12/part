@@ -48,7 +48,8 @@ $html = '
   </thead>
   <tbody>
     <tr>
-      <th scope="row">'.$sum.'</th>
+    while($row = $result->fetch_assoc()){
+      <th scope="row">'.$row["products_name"].'</th>
       <td>'.$name.'</td>
       <td>'.$qty.'</td>
       <td>'.$price.'</td>
