@@ -13,19 +13,19 @@
                       $products_detail = $_POST['products_detail'];
                       $products_price = $_POST['products_price'];
 
-                      if(trim($_FILES["fileUpload"]["tmp_name"]) != ""){
-
-                      $fileinfo=PATHINFO($_FILES["filUpload"]["name"]);
-                      $newFilename=$fileinfo['filename'] ."_". time() . "." . $fileinfo['extension'];
-                      move_uploaded_file($_FILES["filUpload"]["tmp_name"],"images/" . $newFilename);
-                      $location="images/" . $newFilename;
+                      if($_FILES["filUpload"]["name"] != ""){
+                        if(move_uploaded_file($_FILES["filUpload"]["tmp_name"],"images/".$_FILES["filUpload"]["name"])){
+                          @unlink("myfile/".$_POST["hdnOldFile"]);
+                          $sql_img = "UPDATE products SET products_img = '".$_FILES["filUpload"]["name"]."' WHERE products_id = '".$id."'";
+                          $query = mysqli_query($conn,$sql_img);
                       }
 
-                      $sql2 = "UPDATE products SET products_name = '".$products_name."' , products_category = '".$products_category."',products_detail = '".$products_detail."' ,  products_price = '".$products_price."' ,  products_price = '".$products_price."' , products_img = '".$location."'  WHERE products_id = '".$id."' ";
+                      $sql2 = "UPDATE products SET products_name = '".$products_name."' , products_category = '".$products_category."',products_detail = '".$products_detail."' ,  products_price = '".$products_price."' ,  products_price = '".$products_price."' ,  WHERE products_id = '".$id."' ";
                       if (mysqli_query($conn, $sql2)) {
                         header('Location: manager_dog.php');
                         exit;  
-                      }  
+                      } 
+                    } 
                   }
               }
           ?>
@@ -80,6 +80,7 @@
               <div class="form-group custom-file">
                         <input type="file" class="custom-file-input" name="filUpload" id="customFile">
                         <label class="custom-file-label"for="customFile">Choose file</label>
+                        <input type="hidden" name="hdnOldFile" value="<?php echo $row["products_img"];?>">
               </div>
                 <button type="submit" class="btn btn-warning btn-block" name="submit_dog"><i class="fas fa-pen-square"></i> แก้ไขสินค้า</button>
             </form>
