@@ -2,7 +2,7 @@
     session_start();
     include("includes/connect.php");
     $id = $_SESSION["member_id"];
-    $sql = "SELECT count(*) AS Counts FROM orders
+    $sql = "SELECT * FROM orders
             INNER JOIN order_detail ON orders.order_id = order_detail.detail_order
             INNER JOIN members ON orders.order_memberid = members.member_id
             INNER JOIN products ON order_detail.detail_product = products.products_id
@@ -10,11 +10,15 @@
     $result = $conn->query($sql);
     $results = $conn->query($sql);
     $rows = $results->fetch_assoc();
+    $row_cnt = $result->num_rows;
     while($row = $result->fetch_assoc()){
-        $i = $row["Counts"];
         $name = $row["products_name"];
         $qty = $row["detail_qty"];
         $price = $row["products_price"];
+    }
+    $sum = 0;
+    for ($i=1; $i < $row_cnt; $i++) { 
+        $sum = $sum + $i;
     }
 
     ?>
@@ -44,7 +48,7 @@ $html = '
   </thead>
   <tbody>
     <tr>
-      <th scope="row">'.$i.'</th>
+      <th scope="row">'.$sum.'</th>
       <td>'.$name.'</td>
       <td>'.$qty.'</td>
       <td>'.$price.'</td>
