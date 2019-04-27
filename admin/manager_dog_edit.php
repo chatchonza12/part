@@ -12,9 +12,8 @@
                       $products_category = $_POST['products_category'];
                       $products_detail = $_POST['products_detail'];
                       $products_price = $_POST['products_price'];
-                      $filUpload = $_POST['filUpload'];
               
-                      $sql2 = "UPDATE products SET products_name = '".$products_name."' , products_category = '".$products_category."',products_detail = '".$products_detail."' ,  products_price = '".$products_price."' ,  products_price = '".$products_price."' , products_img = '".$filUpload."'  WHERE course_id = '".$id."' ";
+                      $sql2 = "UPDATE products SET products_name = '".$products_name."' , products_category = '".$products_category."',products_detail = '".$products_detail."' ,  products_price = '".$products_price."' ,  products_price = '".$products_price."' , products_img = '".$filUpload."'  WHERE products_id = '".$id."' ";
                       if (mysqli_query($conn, $sql2)) {
                         header('Location: manager_dog.php');
                         exit;  
@@ -70,7 +69,7 @@
                   <label for="">ราคา</label>
                   <input type="text" class="form-control" id="" placeholder="" name="products_price" value="<?php echo $row["products_price"]; ?>">
               </div>
-            <div class="custom-file">
+              <div class="form-group custom-file">
                         <input type="file" class="custom-file-input" name="filUpload" id="customFile">
                         <label class="custom-file-label"for="customFile">Choose file</label>
               </div>
