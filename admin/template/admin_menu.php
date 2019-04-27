@@ -29,7 +29,7 @@
         </a>
         <div class="dropdown-menu show" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">จัดการคอร์สเรียน:</h6>
-          <a class="dropdown-item" href="manager_course.php"><i class="fas fa-plus-square"></i> จัดการคอร์สเรียน</a>
+          <a class="dropdown-item" href="manager_dog.php"><i class="fas fa-plus-square"></i> จัดการคอร์สเรียน</a>
           <div class="dropdown-divider"></div>
         </div>
       </li>

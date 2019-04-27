@@ -19,7 +19,7 @@
 			
 			if($objResult["member_role"] == "admin")
 			{
-				header("location:./admin/index.php");
+				header("location:./admin/manager_course.php");
 			}
 			else
 			{

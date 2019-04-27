@@ -2,7 +2,7 @@
   <?php include('template/admin_header.php');?>
   <?php 
 
-if(isset($_POST['submit_course'])){ 
+if(isset($_POST['submit_dog'])){ 
     if (!empty($_POST['products_name'])) {
         $products_name = $_POST['products_name'];
         $products_category = $_POST['products_category'];
@@ -18,7 +18,7 @@ if(isset($_POST['submit_course'])){
         $sql = "INSERT INTO products (products_name, products_detail , products_price , products_category , products_img) VALUES ('".$products_name."','".$products_detail."','".$products_price."','".$products_category."','".$location."')";
         $query = mysqli_query($conn,$sql);
         
-        header('Location: manager_course.php');
+        header('Location: manager_dog.php');
         exit;    
     }
 }
@@ -68,8 +68,8 @@ if(isset($_POST['submit_course'])){
               <td><?php echo $row["products_price"]; ?></td>
               <td width="20%">
                 <div class="btn-group btn-block" role="group" aria-label="Basic example">
-                    <a href="manager_course_edit.php?id=<?php echo $row["products_id"]; ?>" class="btn btn-warning"><i class="fas fa-pen-square"></i> แก้ไข</a>
-                    <a href="manager_course_delete.php?id=<?php echo $row["products_id"]; ?>" class="btn btn-danger"><i class="fas fa-minus-square"></i> ลบ</a>
+                    <a href="manager_dog_edit.php?id=<?php echo $row["products_id"]; ?>" class="btn btn-warning"><i class="fas fa-pen-square"></i> แก้ไข</a>
+                    <a href="manager_dog_delete.php?id=<?php echo $row["products_id"]; ?>" class="btn btn-danger"><i class="fas fa-minus-square"></i> ลบ</a>
                 </div>
              </td>
             </tr>
@@ -135,7 +135,7 @@ if(isset($_POST['submit_course'])){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-        <button type="submit" class="btn btn-primary" name="submit_course"><i class="fas fa-plus-square"></i> เพิ่มคอร์สเรียน</button>
+        <button type="submit" class="btn btn-primary" name="submit_dog"><i class="fas fa-plus-square"></i> เพิ่มคอร์สเรียน</button>
       </div>
       </form>
 
