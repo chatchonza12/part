@@ -13,11 +13,15 @@
                       $products_detail = $_POST['products_detail'];
                       $products_price = $_POST['products_price'];
 
+                      if($_FILES["filUpload"] != "") {
                       $fileinfo=PATHINFO($_FILES["filUpload"]["name"]);
                       $newFilename=$fileinfo['filename'] ."_". time() . "." . $fileinfo['extension'];
                       move_uploaded_file($_FILES["filUpload"]["tmp_name"],"images/" . $newFilename);
                       $location="images/" . $newFilename;
-              
+                      }else{
+                        echo $location = "d";
+                      }
+
                       $sql2 = "UPDATE products SET products_name = '".$products_name."' , products_category = '".$products_category."',products_detail = '".$products_detail."' ,  products_price = '".$products_price."' ,  products_price = '".$products_price."' , products_img = '".$location."'  WHERE products_id = '".$id."' ";
                       if (mysqli_query($conn, $sql2)) {
                         header('Location: manager_dog.php');
