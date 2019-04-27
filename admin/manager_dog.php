@@ -12,7 +12,7 @@ if(isset($_POST['submit_dog'])){
             $fileinfo=PATHINFO($_FILES["filUpload"]["name"]);
             $newFilename=$fileinfo['filename'] ."_". time() . "." . $fileinfo['extension'];
             move_uploaded_file($_FILES["filUpload"]["tmp_name"],"images/" . $newFilename);
-            $location="images/" . $newFilename;
+            $location="/" . $newFilename;
 
 
         $sql = "INSERT INTO products (products_name, products_detail , products_price , products_category , products_img) VALUES ('".$products_name."','".$products_detail."','".$products_price."','".$products_category."','".$location."')";
