@@ -21,7 +21,7 @@ ob_start();
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 </head>
 <body>
-    <center><h3>ใบเสร็จ</h3></center>
+<h3 style="text-align:center">ใบเสร็จ</h3>
 <table class="table table-bordered" border="1" width="100%">
   <thead class="thead-dark">
     <tr>
