@@ -107,7 +107,7 @@ if(isset($_POST['submit_dog'])){
         </button>
       </div>
       <div class="modal-body">
-      <form name="addproducts" method="post">
+      <form name="addproducts" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="">ชื่อสินค้า</label>
             <input type="text" class="form-control" id="" placeholder="" name="products_name">
