@@ -19,15 +19,14 @@ ob_start();
 <html lang="th">
 <head>
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-    <style>
+</head>
+<body>
+<style>
         body {
             font-family: "Garuda";
             font-size: 12pt;
         }
-    </style>
-</head>
-<body>
-
+</style>
 <table class="table table-bordered" border="1" width="100%">
   <thead class="thead-dark">
     <tr>
