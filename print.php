@@ -17,12 +17,6 @@
     }
 
     ?>
-    <style>
-        .container {
-            font-family: "Garuda";
-            font-size: 12pt;
-        }
-    </style>
 
 <?php
 
@@ -31,6 +25,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf();
 
 $html = '
+    <style>
+        .container {
+            font-family: "Garuda";
+            font-size: 12pt;
+        }
+    </style>
 <div class="container">
 <table class="table table-bordered">
   <thead class="thead-dark">
