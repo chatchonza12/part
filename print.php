@@ -16,13 +16,13 @@ ob_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <?php include("includes/common.php");?>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 </head>
 <body>
 
-<table class="table table-bordered">
+<table class="table table-bordered" border="1" width="100%">
   <thead class="thead-dark">
     <tr>
       <th scope="col">ลำดับ</th>
