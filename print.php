@@ -17,7 +17,13 @@
     }
 
     ?>
-    
+    <style>
+        body {
+            font-family: "Garuda";
+            font-size: 12pt;
+        }
+    </style>
+
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
