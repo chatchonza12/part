@@ -2,7 +2,7 @@
     session_start();
     include("includes/connect.php");
     $id = $_SESSION["member_id"];
-    $sql = "SELECT * FROM orders
+    $sql = "SELECT count(*) FROM orders
             INNER JOIN order_detail ON orders.order_id = order_detail.detail_order
             INNER JOIN members ON orders.order_memberid = members.member_id
             INNER JOIN products ON order_detail.detail_product = products.products_id
@@ -11,7 +11,7 @@
     $results = $conn->query($sql);
     $rows = $results->fetch_assoc();
     while($row = $result->fetch_assoc()){
-        $i = $i++;
+        $i = $row[0];
         $name = $row["products_name"];
         $qty = $row["detail_qty"];
         $price = $row["products_price"];
