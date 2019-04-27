@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">ONLINE</a>
+    <a class="navbar-brand mr-1" href="http://localhost/part/">ระบบจัดการชื้อขายสุนัข</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -22,6 +22,12 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="manager_tranfer.php">
+          <i class="fas fa-plus-square"></i>
+          <span>แจ้งการโอนลูกค้า</span>
+        </a>
+      </li>
       <li class="nav-item dropdown show">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
