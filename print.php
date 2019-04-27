@@ -19,6 +19,12 @@ ob_start();
 <html lang="th">
 <head>
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <style>
+        body {
+            font-family: "Garuda";
+            font-size: 12pt;
+        }
+    </style>
 </head>
 <body>
 
