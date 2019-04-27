@@ -27,7 +27,6 @@
       <th scope="col">ชื่อสินค้า</th>
       <th scope="col">จำนวน</th>
       <th scope="col">ราคา / รายการ</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -37,13 +36,14 @@
       <td><?php echo $row["products_name"]; ?></td>
       <td><?php echo $row["detail_qty"]; ?></td>
       <td><?php echo $row["products_price"]; ?></td>
-      <td style="color:#d9272e">ยังไม่ได้ชำระ</td>
     </tr>
     <?php } ?>
   </tbody>
 </table>
     <a href="./" class="btn btn-dark"><i class="fas fa-caret-left"></i>  กลับไปหน้าแรก</a>
-    <div class="float-right"></div>
+    <div class="float-right">
+    <a href="./" class="btn btn-dark"><i class="fas fa-caret-left"></i>  ปลิ้นใบเสร็จ</a>
+    </div>
     <hr>
 
     <div class="row">
