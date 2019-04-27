@@ -32,7 +32,7 @@ $html = '
         }
     </style>
 <div class="container">
-<table class="table table-bordered">
+<table class="table table-bordered" border="1" style="width:100%">
   <thead class="thead-dark">
     <tr>
       <th scope="col">ลำดับ</th>
@@ -44,9 +44,9 @@ $html = '
   <tbody>
     <tr>
       <th scope="row"></th>
-      <td>"'.$name.'"</td>
-      <td>"'.$qty.'"</td>
-      <td>"'.$price.'"</td>
+      <td>'.$name.'</td>
+      <td>'.$qty.'</td>
+      <td>'.$price.'</td>
     </tr>
   </tbody>
 </table>
