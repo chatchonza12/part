@@ -25,11 +25,11 @@
       <li class="nav-item dropdown show">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
-          <span>จัดการคอสเรียน</span>
+          <span>จัดการสินค้า่</span>
         </a>
         <div class="dropdown-menu show" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">จัดการคอร์สเรียน:</h6>
-          <a class="dropdown-item" href="manager_dog.php"><i class="fas fa-plus-square"></i> จัดการคอร์สเรียน</a>
+          <h6 class="dropdown-header">จัดการสินค้า่:</h6>
+          <a class="dropdown-item" href="manager_dog.php"><i class="fas fa-plus-square"></i> จัดการสินค้า่</a>
           <div class="dropdown-divider"></div>
         </div>
       </li>
