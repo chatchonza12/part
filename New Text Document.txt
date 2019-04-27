@@ -1,0 +1,251 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 22, 2019 at 11:51 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `part`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `category_id` int(11) NOT NULL,
+  `category_name` varchar(50) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`category_id`, `category_name`) VALUES
+(1, 'วิทยาศาสตร์'),
+(2, 'คณิตศาสตร์');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `members`
+--
+
+CREATE TABLE `members` (
+  `member_id` int(11) NOT NULL,
+  `member_name` varchar(100) COLLATE utf8_bin NOT NULL,
+  `member_surname` varchar(100) COLLATE utf8_bin NOT NULL,
+  `member_address` text COLLATE utf8_bin NOT NULL,
+  `member_email` varchar(20) COLLATE utf8_bin NOT NULL,
+  `member_phone` varchar(15) COLLATE utf8_bin NOT NULL,
+  `member_gender` int(11) NOT NULL,
+  `member_user` varchar(50) COLLATE utf8_bin NOT NULL,
+  `member_pass` varchar(50) COLLATE utf8_bin NOT NULL,
+  `member_role` varchar(20) COLLATE utf8_bin NOT NULL,
+  `member_img` longblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `members`
+--
+
+INSERT INTO `members` (`member_id`, `member_name`, `member_surname`, `member_address`, `member_email`, `member_phone`, `member_gender`, `member_user`, `member_pass`, `member_role`, `member_img`) VALUES
+(1, 'นาย กรานตวัน', 'ชิวปรีชาห', '109 หมู่ 6\r\nต.ห้วยม่วง อ.กำแพงแสนน', 'admin@admin.com', '6163622023', 2, 'admin', 'admin', 'admin', 0x6176617461722f5f313535353935343133392e),
+(2, 'ชื่อทดสอบ', 'นามสกุลทดสอบ', '', '', '', 0, 'b5921651133', '123456', 'member', ''),
+(3, 'ชื่อทดสอบ', 'นามสกุลทดสอบ', '', '', '', 0, 'b5921651133', '', 'member', ''),
+(4, 'd', 'd', '', '', '', 0, 'd', 'd', 'member', ''),
+(5, 'eeee', 'eee', '', '', '', 0, 'b5921651133', 'eeee', 'member', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `order_name` varchar(100) COLLATE utf8_bin NOT NULL,
+  `order_address` text COLLATE utf8_bin NOT NULL,
+  `order_email` varchar(50) COLLATE utf8_bin NOT NULL,
+  `order_phone` varchar(15) COLLATE utf8_bin NOT NULL,
+  `order_totalqty` varchar(20) COLLATE utf8_bin NOT NULL,
+  `order_total` varchar(20) COLLATE utf8_bin NOT NULL,
+  `order_memberid` int(11) NOT NULL,
+  `order_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `order_name`, `order_address`, `order_email`, `order_phone`, `order_totalqty`, `order_total`, `order_memberid`, `order_date`) VALUES
+(1, 'นายกรานตวันชิวปรีชา', '109 หมู่ 6\r\nต.ห้วยม่วง อ.กำแพงแสน', 'admin@admin.com', '616362202', '2', '4000', 1, '2019-04-22 23:18:26'),
+(2, 'นาย กรานตวันชิวปรีชาห', '109 หมู่ 6\r\nต.ห้วยม่วง อ.กำแพงแสนน', 'admin@admin.com', '6163622023', '1', '500', 1, '2019-04-23 03:34:51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `detail_id` int(11) NOT NULL,
+  `detail_order` int(11) NOT NULL,
+  `detail_product` int(11) NOT NULL,
+  `detail_qty` int(10) NOT NULL,
+  `detail_total` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `order_detail`
+--
+
+INSERT INTO `order_detail` (`detail_id`, `detail_order`, `detail_product`, `detail_qty`, `detail_total`) VALUES
+(1, 1, 3, 1, 3000),
+(2, 1, 1, 2, 1000),
+(3, 2, 1, 1, 500);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `products_id` int(11) NOT NULL,
+  `products_name` varchar(50) COLLATE utf8_bin NOT NULL,
+  `products_detail` text COLLATE utf8_bin NOT NULL,
+  `products_price` int(11) NOT NULL,
+  `products_img` longblob NOT NULL,
+  `products_category` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`products_id`, `products_name`, `products_detail`, `products_price`, `products_img`, `products_category`) VALUES
+(1, 'DS4015-V01 : แผ่นพับ 50 เรื่องวิทย์ชวนรู้', 'ผู้รวบรวม : พี่ปาล์ม พุทธชาด จันทร์เมือง เนื้อหาภายใน : รวบรวมเกร็ดความรู้เกี่ยวกับวิทยาศาสตร์ สำหรับน้องๆ ระดับประถมศึกษา ไว้กว่า 50 เรื่อง', 500, 0x696d616765732f312e706e67, 1),
+(2, '9203-V03 : ตะลุยโจทย์ วิทย์ฯ สอบเข้า ม.1', 'ระดับของเนื้อหา ทบทวนบทเรียนทั้งหมดและฝึกทำข้อสอบกับครูผู้สอน  \r\n\r\nเนื้อหาครอบคลุมตามหลักสูตรกระทรวงศึกษาธิการและเรียงลำดับตามบทเรียน\r\n\r\nเหมาะสำหรับ น้องที่ต้องการเพิ่มเกรดในโรงเรียน  เตรียมตัวสอบ O – NET  รวมถึงเตรียมแข่งขัน สอบเข้า ม.1 โรงเรียนทั่วประเท', 1500, 0x696d616765732f322e706e67, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transfers`
+--
+
+CREATE TABLE `transfers` (
+  `transfer_id` int(11) NOT NULL,
+  `transfer_memberid` varchar(50) COLLATE utf8_bin NOT NULL,
+  `transfer_bank` varchar(50) COLLATE utf8_bin NOT NULL,
+  `transfer_time` varchar(50) COLLATE utf8_bin NOT NULL,
+  `transfer_note` text COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `transfers`
+--
+
+INSERT INTO `transfers` (`transfer_id`, `transfer_memberid`, `transfer_bank`, `transfer_time`, `transfer_note`) VALUES
+(1, '1', 'กสิกรไทย', '10.00น', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexes for table `members`
+--
+ALTER TABLE `members`
+  ADD PRIMARY KEY (`member_id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- Indexes for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD PRIMARY KEY (`detail_id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`products_id`);
+
+--
+-- Indexes for table `transfers`
+--
+ALTER TABLE `transfers`
+  ADD PRIMARY KEY (`transfer_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `members`
+--
+ALTER TABLE `members`
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `order_detail`
+--
+ALTER TABLE `order_detail`
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `products_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `transfers`
+--
+ALTER TABLE `transfers`
+  MODIFY `transfer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
