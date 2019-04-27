@@ -16,7 +16,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
                     <?php echo $objResult["member_name"]; ?> <?php echo $objResult["member_surname"]; ?>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="left: 58.8%;top: 70%;">
-                <a class="dropdown-item" href="./admin/manager_course.php">จัดการระบบ</a>
+                    <a class="dropdown-item" href="./admin/manager_course.php">จัดการระบบ</a>
                     <a class="dropdown-item" href="member_order_list.php">การชื้อของฉัน</a>
                     <a class="dropdown-item" href="profile.php">บัญชีของฉัน</a>
                 </div> 
@@ -56,6 +56,24 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
             <a class="nav-link" href="#">ติดต่อ</a>
         </li>
         </ul>
+        <ul class="navbar-nav ">
+                <!-- PROFILE DROPDOWN - scrolling off the page to the right -->
+                <?php if(@$_SESSION['member_role'] == "") { ?>
+                    <a href="login.php" style="color:#FFFFFF">เข้าสู่ระบบ / Login</a>
+                <?php } else { ?> 
+                    <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navDropDownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $objResult["member_name"]; ?> <?php echo $objResult["member_surname"]; ?></a>
+                    <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+                        <a class="dropdown-item" href="./admin/manager_course.php">จัดการระบบ</a>
+                        <a class="dropdown-item" href="member_order_list.php">การชื้อของฉัน</a>
+                        <a class="dropdown-item" href="profile.php">บัญชีของฉัน</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</a>
+                    </div>
+                </li>
+                <?php } ?>
+            </ul>
+            
     </div>
   </div>
 </nav>
