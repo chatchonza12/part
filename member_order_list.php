@@ -42,7 +42,7 @@
 </table>
     <a href="./" class="btn btn-dark"><i class="fas fa-caret-left"></i>  กลับไปหน้าแรก</a>
     <div class="float-right">
-    <a href="./" class="btn btn-dark"><i class="fas fa-caret-left"></i>  ปลิ้นใบเสร็จ</a>
+    <a href="print.php" class="btn btn-dark"><i class="fas fa-caret-left"></i>  ปลิ้นใบเสร็จ</a>
     </div>
     <hr>
 
