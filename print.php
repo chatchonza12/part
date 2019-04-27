@@ -18,7 +18,7 @@
 
     ?>
     <style>
-        body {
+        table {
             font-family: "Garuda";
             font-size: 12pt;
         }
