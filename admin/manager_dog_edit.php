@@ -6,17 +6,17 @@
                 $result = $conn->query($sql_category); 
                 $row = mysqli_fetch_assoc($result);
 
-                if(isset($_POST['submit_course'])){ 
-                  if (!empty($_POST['course_name'])) {  
-                      $course_name = $_POST['course_name'];
-                      $course_category = $_POST['course_category'];
-                      $course_section = $_POST['course_section'];
-                      $course_age = $_POST['course_age'];
-                      $course_price = $_POST['course_price'];
+                if(isset($_POST['submit_dog'])){ 
+                  if (!empty($_POST['products_name'])) {  
+                      $products_name = $_POST['products_name'];
+                      $products_category = $_POST['products_category'];
+                      $products_detail = $_POST['products_detail'];
+                      $products_price = $_POST['products_price'];
+                      $filUpload = $_POST['filUpload'];
               
-                      $sql2 = "UPDATE course SET course_name = '".$course_name."' , course_category = '".$course_category."',course_section = '".$course_section."' ,  course_age = '".$course_age."' ,  course_price = '".$course_price."' WHERE course_id = '".$id."' ";
+                      $sql2 = "UPDATE products SET products_name = '".$products_name."' , products_category = '".$products_category."',products_detail = '".$products_detail."' ,  products_price = '".$products_price."' ,  products_price = '".$products_price."' , products_img = '".$filUpload."'  WHERE course_id = '".$id."' ";
                       if (mysqli_query($conn, $sql2)) {
-                        header('Location: manager_course.php');
+                        header('Location: manager_dog.php');
                         exit;  
                       }  
                   }
@@ -35,7 +35,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="admin.php">FITWHEY</a>
+            <a href="admin.php">ระบบจัดการสินค้า</a>
           </li>
           <li class="breadcrumb-item">จัดการสินค้า</li>
           <li class="breadcrumb-item active"><i class="fas fa-plus-square"></i> แก้ไขสมาชิก :</li>
@@ -46,35 +46,35 @@
             <form name="edit_course" method="post">
             <div class="form-group">
                     <label for="">ลำดับ</label>
-                    <input type="text" class="form-control" id="" placeholder="" disabled value="<?php echo $row["course_id"]; ?>">
+                    <input type="text" class="form-control" id="" placeholder="" disabled value="<?php echo $row["products_id"]; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="">ชื่อคอร์สเรียน</label>
-                    <input type="text" class="form-control" id="" placeholder="ใส่รหัสผ่าน" value="<?php echo $row["course_name"]; ?>" name="course_name">
+                    <label for="">ชื่อสินค้า</label>
+                    <input type="text" class="form-control" id="" placeholder="ใส่รหัสผ่าน" value="<?php echo $row["products_name"]; ?>" name="products_name">
                 </div>
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">ประเภทคอร์สเรียน</label>
-                  <select class="form-control" id="" name="course_category">
-                  <option value="1">PERSONAL TRAINING</option>
-                  <option value="2">PHYSIOTHERAPY SERVICE</option>
-                  <option value="3">PERSONAL TRAINER CERTIFICATION</option>
+                  <label for="exampleFormControlSelect1">ประเภทสุนัข</label>
+                  <select class="form-control" id="" name="products_category">
+                  <option value="1">พันธุ์ปอมเมอเรเนียน</option>
+                  <option value="2">พันธุ์ชิวาว่า</option>
+                  <option value="3">พันธุ์ชิสุ</option>
+                  <option value="4">พันธุ์ไซบีเรีย</option>
+                  <option value="5">พันธุ์โกลเดินริทรีฟเวอร์</option>
                   </select>
               </div>
-                <div class="form-group">
-                    <label for="">เทรนเนอร์</label>
-                    <input type="text" class="form-control" id="" placeholder="" value="<?php echo $row["course_session"]; ?>" name="course_section">
-                </div>
-
-                <div class="form-group">
-                    <label for="">อายุคอร์ส</label>
-                    <input type="text" class="form-control" id="" placeholder="" value="<?php echo $row["course_age"]; ?>" name="course_age">
-                </div>
-
-                <div class="form-group">
-                    <label for="">ราคา</label>
-                    <input type="text" class="form-control" id="" placeholder="" value="<?php echo $row["course_price"]; ?>" name="course_price">
-                </div>
-                <button type="submit" class="btn btn-warning btn-block" name="submit_course"><i class="fas fa-pen-square"></i> แก้ไขสมาชิก</button>
+              <div class="form-group">
+              <label>รายละเอียด</label>
+                  <textarea class="form-control" name="products_detail" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="">ราคา</label>
+                  <input type="text" class="form-control" id="" placeholder="" name="products_price">
+              </div>
+            <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="filUpload" id="customFile">
+                        <label class="custom-file-label"for="customFile">Choose file</label>
+              </div>
+                <button type="submit" class="btn btn-warning btn-block" name="submit_dog"><i class="fas fa-pen-square"></i> แก้ไขสินค้า</button>
             </form>
 
            </div>

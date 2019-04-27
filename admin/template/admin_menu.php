@@ -28,7 +28,7 @@
           <span>จัดการสินค้า่</span>
         </a>
         <div class="dropdown-menu show" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">จัดการสินค้า่:</h6>
+          <h6 class="dropdown-header">จัดการสินค้า:</h6>
           <a class="dropdown-item" href="manager_dog.php"><i class="fas fa-plus-square"></i> จัดการสินค้า</a>
           <div class="dropdown-divider"></div>
         </div>
