@@ -51,7 +51,6 @@ if(isset($_POST['submit_dog'])){
               <th scope="col">ชื่อลูกค้า</th>
               <th scope="col">ธนาคาร</th>
               <th scope="col">เวลาการโอน</th>
-              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -66,11 +65,6 @@ if(isset($_POST['submit_dog'])){
               <td><?php echo $row["member_name"]; ?></td>
               <td><?php echo $row["transfer_bank"]; ?></td>
               <td><?php echo $row["transfer_time"]; ?></td>
-              <td width="20%">
-                <div class="btn-group btn-block" role="group" aria-label="Basic example">
-                    <a href="manager_dog_edit.php?id=<?php echo $row["products_id"]; ?>" class="btn btn-success"><i class="fas fa-pen-square"></i> สำเร็จ</a>
-                </div>
-             </td>
             </tr>
             <?php 
             } } else {
